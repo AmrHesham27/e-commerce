@@ -1,0 +1,16 @@
+.Iot {
+    margin: 0;
+    padding: 0;
+    scroll-margin-top: 200px;
+}
+
+.container {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+#Iot-h1 {
+    margin: 30px 100px 0 100px;
+}

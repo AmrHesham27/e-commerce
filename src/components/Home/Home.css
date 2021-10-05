@@ -1,0 +1,69 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html,body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.Home {
+    margin: 0;
+    padding: 0;
+}
+
+#oppoImg {
+    width: 100%;
+    height: 40rem ;
+    margin: 0;
+    margin-top: 94px;
+}
+
+.NavLink {
+    width:auto;
+    height:auto;
+    color: white;
+    background-color: black;
+    outline: none;
+    cursor:pointer;
+    border:none;
+    font-size: 20px;
+    margin :0px 20px 10px;
+    font-weight:bolder;
+
+}
+
+.OPPO {
+    margin: 20px 20px 10px 0;
+    text-align: center;
+    font-weight:bolder;
+
+}
+
+/* so that when you scroll you get the element under the header */
+#phones{
+    scroll-margin-top: 120px;
+}
+
+#Iot{
+    scroll-margin-top: 120px;
+}
+
+a{
+    float: right;
+    font-family: 'Open Sans';
+    margin: 0 20px;
+    color:white;
+    text-decoration: none;
+    margin: 0 20px;
+    cursor:pointer;
+    font-size: 18px;
+    font-weight:bolder;
+}
+
+#logOut {
+    float: right;
+}

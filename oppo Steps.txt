@@ -1,0 +1,8 @@
+in seeDetails 
+connect to redx products and take the product value and show it properly
+add buy button so that the product add to the firestore (Shoppoing cart)
+
+in shoppingCart
+connect to firebase to take the shopping cart (already done) and send it in Redux
+take it from Redux and show it properly in the page 
+
