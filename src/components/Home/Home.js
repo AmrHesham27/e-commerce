@@ -6,15 +6,10 @@ import Header from '../Header/Header';
 import Iot from '../Iot/Iot';
 import Footer from "../Footer/Footer";
 import Phones from "../Phones/Phones";
-// redux
-import { useSelector } from "react-redux";
 // React
 import { useRef } from 'react';
 
 function Home(props) {
-
-  // Redux
-  const authUser = useSelector(state => state.authUser);
 
   // scroll to specific elements using Ref
   const phonesRef = useRef();
@@ -26,18 +21,11 @@ function Home(props) {
   
   return (
     <div className="Home" >
-      {
-      authUser?
-      <Header LogOut={true}>
+      <Header>
         <button onClick={scrollPhones} className='NavLink'>Smart phones</button>
         <button onClick={scrollIot} className='NavLink'>Iot</button>
       </Header> 
-      :
-      <Header Login={true} Register={true} >
-        <button onClick={scrollPhones} className='NavLink'>Smart phones</button>
-        <button onClick={scrollIot} className='NavLink'>Iot</button>
-      </Header>
-      }
+
       <img id="oppoImg" src={oppo1} alt='oppo'/>
 
       <div id='phones' ref={phonesRef} >

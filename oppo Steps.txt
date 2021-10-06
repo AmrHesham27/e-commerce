@@ -1,8 +1,8 @@
-in seeDetails 
-connect to redx products and take the product value and show it properly
-add buy button so that the product add to the firestore (Shoppoing cart)
+shopping cart 
+access database and write info 
+make it have red number on header 
 
-in shoppingCart
-connect to firebase to take the shopping cart (already done) and send it in Redux
-take it from Redux and show it properly in the page 
+on show product the link should show the product name 
+the page should still work if the user refreshed
 
+mmake some more photos on the website

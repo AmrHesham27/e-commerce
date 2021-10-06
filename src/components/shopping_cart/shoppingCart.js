@@ -19,8 +19,6 @@ const ShoppingCart = (props) => {
     return (
         <div>
             <h1>your shopping cart</h1>
-            <p>{userId? userId : undefined}</p>
-            <p>{ shoppingData? shoppingData : undefined }</p>
         </div>
     )
 }

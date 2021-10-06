@@ -26,7 +26,7 @@ const Login = props => {
     
     return (
         <div className='LoginPage'>
-            <Header Register={true} Home={true} />
+            <Header/>
             <div className="signIn">
                 <h2 className='LoginH2'>Login</h2>
                 <button className="LoginButton" onClick={ signInWithGoogle }>

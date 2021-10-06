@@ -33,7 +33,7 @@ const LoginWithEmail = (props) => {
 
     return (
         <div className='LoginPage'>
-            <Header Login={true} Home={true} />
+            <Header/>
             <div className="signIn">
                 <h2 className="LoginH2">Sign In with your Email</h2>
 
