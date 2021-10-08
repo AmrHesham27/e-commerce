@@ -3,11 +3,12 @@ import { getDatabase, ref, get, child } from "firebase/database";
 
 const ShoppingItem = (props) => {    
     const [Img, setImg] = useState(undefined);
+    const productName = props.nameAndNo[0];
+    const noOfOrders = props.nameAndNo[1];
 
     useEffect(
         (props)=>{
             let mounted = true;
-            const productName = props.nameAndNo[0];
             const dbRef = ref(getDatabase());
             const ImgFireBase = () => { get(child(dbRef, `Images/${productName}`)).then((snapshot) => {
                 if (snapshot.exists()) {
@@ -21,15 +22,15 @@ const ShoppingItem = (props) => {
             }
             if(mounted){ ImgFireBase(); ;}
             return () => {mounted = false}
-        },[]
+        }
     );
 
   
     return (
         <div className="shoppingProduct">
-            <p>{props.nameAndNo[0]}</p>
+            <p>{productName}</p>
             <img src={Img} alt="product" />
-            <p>{props.nameAndNo[1]}</p>
+            <p>{noOfOrders}</p>
         </div>
     )
 

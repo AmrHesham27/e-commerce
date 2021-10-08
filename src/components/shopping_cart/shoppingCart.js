@@ -30,7 +30,7 @@ const ShoppingCart = (props) => {
             }
             if (mounted){ shoppingDataFirebase(); }
             return ()=>{mounted = false};
-        },[userId]
+        }
     );
 
 
