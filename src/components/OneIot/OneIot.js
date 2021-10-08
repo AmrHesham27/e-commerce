@@ -12,7 +12,6 @@ const OneIot = (props) => {
     let iotPrice = data.price;
     let iotImg = data.Img;
 
-    const productType = "iot";
     const seeDetails = () => {
       dispatch( addSeeDetailsAction( iotName, data ) );
       history.push('/ShowProduct')     

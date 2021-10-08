@@ -21,7 +21,6 @@ const Login = props => {
         ()=>{
             if (authUser)
             {history.push('/')}}
-        ,[authUser]
     );
     
     return (

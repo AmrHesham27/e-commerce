@@ -12,7 +12,6 @@ const OnePhone = (props) => {
     let phonePrice = data.price;
     let phoneImg = data.Img;
 
-    const productType = "smartPhones";
     const seeDetails = () => {
       dispatch( addSeeDetailsAction( phoneName, data ) );
       history.push('/ShowProduct')     

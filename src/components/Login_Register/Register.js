@@ -15,9 +15,6 @@ const Register = (props) => {
    const [ErrMsg , setErrMsg] = useState(null);
    const auth = getAuth();
 
-   const handlePassword = (e) => {
-       setPassword(e.target.value);
-   }
    // Register User with Email and password
    const createUserWithEmail = () => { createUserWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
@@ -27,7 +24,6 @@ const Register = (props) => {
     })
     .catch((error) => {
       const errorCode = error.code;
-      const errorMessage = error.message;
       setErrMsg(errorCode);
     });
     }

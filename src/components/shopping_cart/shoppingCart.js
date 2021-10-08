@@ -10,23 +10,24 @@ const ShoppingCart = (props) => {
     const userId = useSelector(state => state.authUser);
     const [shoppingItems, setShoppingItems] = useState(undefined)
 
-    // Listener to write data from Firebase
-    const dbRef = ref(getDatabase());
-    const shoppingDataFirebase = () => { get(child(dbRef, `users/${userId}/shoppingCart`)).then((snapshot) => {
-        if (snapshot.exists()) {
-          setShoppingItems(snapshot.val());
-        } else {
-          console.log("no shopping data");
-        }
-    }).catch((error) => {
-        console.error(error);
-    });
-    }
+   
 
     // 
     useEffect(
         () => {
             let mounted = true;
+             // Listener to write data from Firebase
+            const dbRef = ref(getDatabase());
+            const shoppingDataFirebase = () => { get(child(dbRef, `users/${userId}/shoppingCart`)).then((snapshot) => {
+                if (snapshot.exists()) {
+                setShoppingItems(snapshot.val());
+                } else {
+                console.log("no shopping data");
+                }
+            }).catch((error) => {
+                console.error(error);
+            });
+            }
             if (mounted){ shoppingDataFirebase(); }
             return ()=>{mounted = false};
         },[userId]
