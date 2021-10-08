@@ -8,12 +8,13 @@ const OnePhone = (props) => {
     const dispatch = useDispatch();
 
     let phoneName = props.phoneName;
-    let phonePrice = props.data.price;
-    let phoneImg = props.data.Img;
+    let data = props.data;
+    let phonePrice = data.price;
+    let phoneImg = data.Img;
 
     const productType = "smartPhones";
     const seeDetails = () => {
-      dispatch( addSeeDetailsAction( productType , phoneName) );
+      dispatch( addSeeDetailsAction( phoneName, data ) );
       history.push('/ShowProduct')     
     }
 

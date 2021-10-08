@@ -8,12 +8,13 @@ const OneIot = (props) => {
     const dispatch = useDispatch();
 
     let iotName = props.iotName;
-    let iotPrice = props.data.price;
-    let iotImg = props.data.Img;
+    let data = props.data;
+    let iotPrice = data.price;
+    let iotImg = data.Img;
 
     const productType = "iot";
     const seeDetails = () => {
-      dispatch( addSeeDetailsAction( productType , iotName) );
+      dispatch( addSeeDetailsAction( iotName, data ) );
       history.push('/ShowProduct')     
     }
     return (

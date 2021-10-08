@@ -1,8 +1,0 @@
-shopping cart 
-access database and write info 
-make it have red number on header 
-
-on show product the link should show the product name 
-the page should still work if the user refreshed
-
-mmake some more photos on the website

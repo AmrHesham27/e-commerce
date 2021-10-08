@@ -5,7 +5,7 @@ import { ADD_SEE_DETAILS } from "../actions/seeDetails";
 export default function seeDetailsReducer( state=null , action){
     switch (action.type){
         case ADD_SEE_DETAILS :
-            return { productType : action.productType, productName : action.productName }
+            return ( {productName : action.productName, productInfo : action.productInfo} );
         default :
             return state
     }

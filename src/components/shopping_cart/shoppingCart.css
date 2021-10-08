@@ -1,0 +1,33 @@
+.shoppingProduct {
+    text-align: center;
+    width: 80%;
+    box-shadow: 4px 4px 8px 4px rgba(0, 0, 0, 0.514);
+    margin: 20px auto ;
+    border-radius: 5px;
+    
+}
+img {
+    width:100px;
+    height:100px;
+}
+
+/* this solve the problem of the white space in the top */
+.shoppingContainer{
+    display: flex;
+    flex-direction: column;
+}
+body {
+    margin:0;
+    padding:0;
+}
+
+.shoppingWrap {
+    margin: 200px auto 405px auto;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+* {
+    font-family: 'Open Sans', sans-serif;
+}

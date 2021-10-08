@@ -29,19 +29,33 @@ function App(props){
   function writeUserData(user) {
     const db = getDatabase();
     set(ref(db, 'users/' + user.uid), {
-      shoppingCart: "no data",
+      email: user.email,
     });
   }
 
-  // if user signed in, send his id to Redux and put his id in firebase data
+  // if user exist in firebase do nothing, if not set his data
   const dbRef = ref(getDatabase());
+  const userFirebase = (user) => { get(child(dbRef, `users/${user.uid}`)).then((snapshot) => {
+    if (snapshot.exists()) {
+      return;
+    } else {
+      writeUserData(user);
+    }
+  }).catch((error) => {
+    console.error(error);
+  });
+  }
+
+
+  // if user signed in, send his id to Redux and put his id in firebase data
   onAuthStateChanged(auth, (user) => {
       if (user) {
-        // User is signed in
+        // add User to Redux store
         dispatch(addUserAction(user.uid));
-        // Add user id to my Firestore
-        writeUserData(user);
+        // add user to firebase
+        userFirebase(user);
       } 
+      
   });  
 
   // useEffect to get the data of products from FireBase and send it to Redux store

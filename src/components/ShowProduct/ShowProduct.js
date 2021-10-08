@@ -6,20 +6,18 @@ import { useState } from "react";
 import { getDatabase, ref, runTransaction  } from "firebase/database";
 
 const ShowProduct = (props) => {
-    // get product type and name from Redux
+    // get state fromo redux
+    const userId = useSelector( state => state.authUser )
     const seeDetails = useSelector(state => state.seeDetails);
-    const productName = seeDetails.productName;
-    const productType = seeDetails.productType;
-    // get the actual products from redux and the logged in user Id
-    const product = useSelector(state => state.products[productType][productName]);
-    const userId = useSelector(state => state.authUser); 
+    let productName = seeDetails.productName;
+    let productInfo = seeDetails.productInfo;
     // product info
-    const Img = product.Img;
-    const price = product.price;
-    const RAM = product.RAM ? product.RAM : undefined;
-    const Memory = product.Memory? product.Memory : undefined;
+    const Img = productInfo && productInfo.Img ? productInfo.Img : undefined;
+    const price = productInfo && productInfo.price ? productInfo.price : undefined;
+    const RAM = productInfo && productInfo.RAM ? productInfo.RAM : undefined;
+    const Memory = productInfo && productInfo.Memory? productInfo.Memory : undefined;
 
-    // function to write data to firebase
+    // function to write data to firebase (buy item)
     function fireBaseBuy( userId , productName ) {
       const db = getDatabase();
       const shoppingRef = ref(db, '/users/' + userId + '/shoppingCart/' + productName);
