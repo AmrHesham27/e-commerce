@@ -31,11 +31,17 @@ const ShowProduct = (props) => {
     }
     // Buy function
     const [msg, setMsg] = useState(undefined);
+    const [msgColor, setMsgColor] = useState("black");
     const buy = () => {
       if (userId){
         fireBaseBuy(userId , productName);
+        setMsg("purchase was made successfully!");
+        setMsgColor("green");
       }
-      else{setMsg("please login first")}
+      else{
+        setMsg("please login first");
+        setMsgColor("red");
+      }
     } 
 
     return (
@@ -48,7 +54,7 @@ const ShowProduct = (props) => {
           <p>{RAM ? "RAM is " + RAM + "GB" : undefined}</p>
           <p>${price}</p>
           <button onClick={buy} className="buyButton">Buy now</button>
-          <p className="err">{msg ? msg : undefined}</p>      
+          <p style={{color:msgColor}}>{msg ? msg : undefined}</p>      
         </div>
         <Footer/>
       </div>

@@ -10,9 +10,6 @@ const ShoppingCart = (props) => {
     const userId = useSelector(state => state.authUser);
     const [shoppingItems, setShoppingItems] = useState(undefined)
 
-   
-
-    // 
     useEffect(
         () => {
             let mounted = true;
@@ -30,7 +27,7 @@ const ShoppingCart = (props) => {
             }
             if (mounted){ shoppingDataFirebase(); }
             return ()=>{mounted = false};
-        }
+        },[userId]
     );
 
 

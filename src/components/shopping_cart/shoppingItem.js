@@ -7,14 +7,14 @@ const ShoppingItem = (props) => {
     const noOfOrders = props.nameAndNo[1];
 
     useEffect(
-        (props)=>{
+        ()=>{
             let mounted = true;
             const dbRef = ref(getDatabase());
             const ImgFireBase = () => { get(child(dbRef, `Images/${productName}`)).then((snapshot) => {
                 if (snapshot.exists()) {
                   setImg(snapshot.val());
                 } else {
-                  console.log("no shopping data");
+                  console.log("no photo");
                 }
             }).catch((error) => {
                 console.error(error);

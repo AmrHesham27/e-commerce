@@ -21,6 +21,7 @@ const Login = props => {
         ()=>{
             if (authUser)
             {history.push('/')}}
+        
     );
     
     return (
