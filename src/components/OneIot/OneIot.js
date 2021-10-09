@@ -1,11 +1,9 @@
 import './OneIot.css'
-import { addSeeDetailsAction } from '../../actions/seeDetails'; 
 import { useHistory } from 'react-router';
 import { useDispatch } from 'react-redux';
 
 const OneIot = (props) => {
     const history = useHistory();
-    const dispatch = useDispatch();
 
     let iotName = props.iotName;
     let data = props.data;
@@ -13,8 +11,7 @@ const OneIot = (props) => {
     let iotImg = data.Img;
 
     const seeDetails = () => {
-      dispatch( addSeeDetailsAction( iotName, data ) );
-      history.push('/ShowProduct')     
+      history.push('/ShowProduct/' + iotName)     
     }
     return (
       <div className="OneIot">

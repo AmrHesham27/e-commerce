@@ -19,10 +19,8 @@ const ShoppingCart = (props) => {
                 if (snapshot.exists()) {
                 setShoppingItems(snapshot.val());
                 } else {
-                console.log("no shopping data");
                 }
             }).catch((error) => {
-                console.error(error);
             });
             }
             if (mounted){ shoppingDataFirebase(); }

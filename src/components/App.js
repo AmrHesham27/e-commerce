@@ -58,16 +58,15 @@ function App(props){
       
   });  
 
-  const [names, setNames] = useState(undefined);
+  const [allProducts, setAllProducts] = useState(undefined);
   // useEffect to get the data of products from FireBase and send it to Redux store
   useEffect(
       () => get(child(dbRef, `products`)).then((snapshot) => {
       if (snapshot.exists()) {
         const productsData =  snapshot.val();
         dispatch( addDataAction(productsData) );
-        const productsNames = 
-          [...Object.keys(productsData.iot), ...Object.keys(productsData.smartPhones)];
-        setNames(productsNames);
+        const allProductsData = Object.entries({...productsData.smartPhones, ...productsData.iot});
+        setAllProducts(allProductsData);
       } else {
         //console.log("No data available");
       }
@@ -86,9 +85,8 @@ function App(props){
         <Route path='/LoginWithEmail' exact render={ () => (<LoginWithEmail />) } />
         <Route path='/ForgotPassword' exact render={ () => (<ForgotPassword />) } />
         <Route path='/ShoppingCart' exact render={ () => (<ShoppingCart />) } />
-        <Route path='/ShowProduct' exact render={ () => (<ShowProduct />) } />
-        {names?
-        names.map(i => {return(<Route path={"/ShowProduct/"+i} exact render={() => (<ShowProduct name={i} />) }/>)})
+        {allProducts?
+        allProducts.map(([i,y]) => {return(<Route key={i} path={"/ShowProduct/"+i} exact render={() => (<ShowProduct name={i} data={y} />) }/>)})
         :undefined}
       </Switch>      
     </BrowserRouter>

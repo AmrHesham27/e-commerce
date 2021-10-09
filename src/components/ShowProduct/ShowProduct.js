@@ -7,26 +7,26 @@ import { getDatabase, ref, runTransaction  } from "firebase/database";
 
 const ShowProduct = (props) => {
     // get state fromo redux
-    const userId = useSelector( state => state.authUser )
-    const seeDetails = useSelector(state => state.seeDetails);
-    let productName = seeDetails.productName;
-    let productInfo = seeDetails.productInfo;
+    const userId = useSelector( state => state.authUser );
+
+    let name = props.name;
+    let data = props.data;
     // product info
-    const Img = productInfo && productInfo.Img ? productInfo.Img : undefined;
-    const price = productInfo && productInfo.price ? productInfo.price : undefined;
-    const RAM = productInfo && productInfo.RAM ? productInfo.RAM : undefined;
-    const Memory = productInfo && productInfo.Memory? productInfo.Memory : undefined;
+    const Img = data.Img ;
+    const price = data.price ;
+    const RAM = data.RAM ? data.RAM : undefined;
+    const Memory = data.Memory? data.Memory : undefined;
 
     // function to write data to firebase (buy item)
-    function fireBaseBuy( userId , productName ) {
+    function fireBaseBuy( userId , name ) {
       const db = getDatabase();
-      const shoppingRef = ref(db, '/users/' + userId + '/shoppingCart/' + productName);
-      runTransaction(shoppingRef, (productName) => {
+      const shoppingRef = ref(db, '/users/' + userId + '/shoppingCart/' + name);
+      runTransaction(shoppingRef, (name) => {
         if (userId){
-          if (productName) { productName++ }  
-          else { productName = 1 }
+          if (name) { name++ }  
+          else { name = 1 }
         }
-        return productName;
+        return name;
       });
     }
     // Buy function
@@ -34,7 +34,7 @@ const ShowProduct = (props) => {
     const [msgColor, setMsgColor] = useState("black");
     const buy = () => {
       if (userId){
-        fireBaseBuy(userId , productName);
+        fireBaseBuy(userId , name);
         setMsg("purchase was made successfully!");
         setMsgColor("green");
       }
@@ -48,7 +48,7 @@ const ShowProduct = (props) => {
       <div className="showProductPage">
         <Header/>
         <div className="product">
-          <h1 className="productName">{productName}</h1>
+          <h1 className="productName">{name}</h1>
           <img src={Img} alt="product"/>
           <p>{Memory ? "Memory is " + Memory + "GB" : undefined}</p>
           <p>{RAM ? "RAM is " + RAM + "GB" : undefined}</p>

@@ -1,11 +1,8 @@
 import './OnePhone.css'
 import { useHistory } from 'react-router';
-import { useDispatch } from 'react-redux';
-import { addSeeDetailsAction } from '../../actions/seeDetails'; 
 
 const OnePhone = (props) => {
     const history = useHistory();
-    const dispatch = useDispatch();
 
     let phoneName = props.phoneName;
     let data = props.data;
@@ -13,8 +10,7 @@ const OnePhone = (props) => {
     let phoneImg = data.Img;
 
     const seeDetails = () => {
-      dispatch( addSeeDetailsAction( phoneName, data ) );
-      history.push('/ShowProduct')     
+      history.push('/ShowProduct/' + phoneName)     
     }
 
     return (
