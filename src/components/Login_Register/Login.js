@@ -20,7 +20,7 @@ const Login = props => {
     useEffect(
         ()=>{
             if (authUser)
-            {history.push('/')}}
+            {history.push('/')}},[authUser, history]
         
     );
     
