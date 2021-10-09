@@ -1,5 +1,5 @@
 // React
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 
 // pages
@@ -58,20 +58,24 @@ function App(props){
       
   });  
 
+  const [names, setNames] = useState(undefined);
   // useEffect to get the data of products from FireBase and send it to Redux store
   useEffect(
       () => get(child(dbRef, `products`)).then((snapshot) => {
       if (snapshot.exists()) {
         const productsData =  snapshot.val();
         dispatch( addDataAction(productsData) );
+        const productsNames = 
+          [...Object.keys(productsData.iot), ...Object.keys(productsData.smartPhones)];
+        setNames(productsNames);
       } else {
         //console.log("No data available");
       }
       })
       .catch((error) => {
       //console.error(error);
-      })  
-  );
+      }),[dispatch, dbRef]  
+  );  
 
   return(
     <BrowserRouter>
@@ -83,6 +87,9 @@ function App(props){
         <Route path='/ForgotPassword' exact render={ () => (<ForgotPassword />) } />
         <Route path='/ShoppingCart' exact render={ () => (<ShoppingCart />) } />
         <Route path='/ShowProduct' exact render={ () => (<ShowProduct />) } />
+        {names?
+        names.map(i => {return(<Route path={"/ShowProduct/"+i} exact render={() => (<ShowProduct name={i} />) }/>)})
+        :undefined}
       </Switch>      
     </BrowserRouter>
   )

@@ -18,8 +18,8 @@ const OneIot = (props) => {
     }
     return (
       <div className="OneIot">
-          <img src={iotImg} alt="Iot"/>
           <h1 className="IotName">{iotName}</h1>
+          <img src={iotImg} alt="Iot"/>
           <div className="productPrice" >
             <p>${iotPrice}</p>
           </div>
