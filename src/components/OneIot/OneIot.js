@@ -1,6 +1,5 @@
 import './OneIot.css'
 import { useHistory } from 'react-router';
-import { useDispatch } from 'react-redux';
 
 const OneIot = (props) => {
     const history = useHistory();
