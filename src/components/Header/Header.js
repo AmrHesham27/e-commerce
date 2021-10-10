@@ -25,9 +25,9 @@ const Header = (props) => {
     return (
         <div className='header'>
           <p className='OPPO'>OPPO</p>
-          {!userId ? <Link to="/Register" >Register</Link> : undefined}
-          {!userId ? <Link to="/Login" >Login</Link> : undefined}
-          {userId ? <button onClick={LogUserOut} className='NavLink' id='logOut'>Log out</button> : undefined}
+          {!userId ? <Link className="headerLogin" to="/Register" >Register</Link> : undefined}
+          {!userId ? <Link className="headerLogin"  to="/Login" >Login</Link> : undefined}
+          {userId ? <button className="headerLogin"  onClick={LogUserOut} id='logOut'>Log out</button> : undefined}
           <Link to="/" >Home</Link>
           {userId ? <Link to="/ShoppingCart" >ShoppingCart</Link> : undefined}
 

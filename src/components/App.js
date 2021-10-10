@@ -55,7 +55,6 @@ function App(props){
         // add user to firebase
         userFirebase(user);
       } 
-      
   });  
 
   const [allProducts, setAllProducts] = useState(undefined);

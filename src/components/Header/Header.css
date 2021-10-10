@@ -14,3 +14,33 @@
     font-weight:bolder;
 
 }
+
+button, a {
+    margin :0px 20px 10px;
+    padding: 0px;
+    display: inline;
+    float: left;
+    color: white;
+    background-color: black;
+    outline: none;
+    cursor:pointer;
+    border:none;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+
+@media screen and (max-width: 992px) {
+    button, a {
+      font-size: 18px;
+    }
+}
+@media screen and (max-width: 600px) {
+    button, a {
+      font-size: 14px;
+    }
+}
+
+.headerLogin{
+    float: right;
+} 
