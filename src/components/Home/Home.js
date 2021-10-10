@@ -22,8 +22,8 @@ function Home(props) {
   return (
     <div className="Home" >
       <Header>
-          <button onClick={scrollPhones} className='NavLink'>Smart phones</button>
-          <button onClick={scrollIot} className='NavLink'>Iot</button>
+          <button  className="nav-link" onClick={scrollPhones}>Smart phones</button>
+          <button  className="nav-link" onClick={scrollIot}>Iot</button>
       </Header> 
 
       <img id="oppoImg" src={oppo1} alt='oppo'/>

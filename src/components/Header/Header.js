@@ -25,11 +25,11 @@ const Header = (props) => {
     return (
         <div className='header'>
           <p className='OPPO'>OPPO</p>
-          {!userId ? <Link className="headerLogin" to="/Register" >Register</Link> : undefined}
-          {!userId ? <Link className="headerLogin"  to="/Login" >Login</Link> : undefined}
-          {userId ? <button className="headerLogin"  onClick={LogUserOut} id='logOut'>Log out</button> : undefined}
-          <Link to="/" >Home</Link>
-          {userId ? <Link to="/ShoppingCart" >ShoppingCart</Link> : undefined}
+          {!userId ? <Link className="nav-link headerLogin" to="/Register" >Register</Link> : undefined}
+          {!userId ? <Link className="nav-link headerLogin"  to="/Login" >Login</Link> : undefined}
+          {userId ? <button className="nav-link headerLogin"  onClick={LogUserOut} id='logOut'>Log out</button> : undefined}
+          <Link className="nav-link"  to="/" >Home</Link>
+          {userId ? <Link className="nav-link"  to="/ShoppingCart" >ShoppingCart</Link> : undefined}
 
           {props.children}
         </div>
