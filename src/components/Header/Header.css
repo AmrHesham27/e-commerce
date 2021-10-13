@@ -27,20 +27,46 @@
   background-color: white;
   cursor: pointer;
   text-decoration: none;
-  font-size: 1.3vw;
+  font-size: 18px;
   font-weight: bolder;
   font-family: "Open Sans", sans-serif;
 }
 
-.Header .loginButton {
+.Header .loginButton, .Header .nav-link {
   margin: 10px 15px;
   padding: 0px;
   text-decoration: none;
   background-color: white;
   color: black;
-  font-size: 1.3vw;
+  font-size: 18px;
   font-weight: bolder;
   border: none;
   font-family: "Open Sans", sans-serif;
+}
+
+@media screen and (max-width: 1024px) {
+  .Header .loginButton, .Header .nav-link {
+    font-size: 17px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .Header .loginButton, .Header .nav-link {
+    font-size: 15px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .Header .loginButton, .Header .nav-link {
+    font-size: 13px;
+    margin: 6px 6px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .Header .loginButton, .Header .nav-link {
+    font-size: 11px;
+    margin: 6px 6px;
+  }
 }
 /*# sourceMappingURL=Header.css.map */
