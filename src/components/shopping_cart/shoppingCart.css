@@ -1,46 +1,49 @@
-.shoppingProduct {
-    text-align: center;
-    width: 80%;
-    box-shadow: 4px 4px 8px 4px rgba(0, 0, 0, 0.514);
-    margin: 20px auto ;
-    border-radius: 5px;
-    
-}
-img {
-    width:100px;
-    height:100px;
+.shoppingCart {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
-/* this solve the problem of the white space in the top */
-.shoppingContainer{
-    display: flex;
-    flex-direction: column;
-}
-body {
-    margin:0;
-    padding:0;
-}
-
-.shoppingWrap {
-    margin: 200px auto 405px auto;
-    display: flex;
-    flex-direction: column;
-    width: 100%;
+.shoppingCart .shoppingWrap {
+  margin: 200px auto 405px auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
 }
 
-* {
-    font-family: 'Open Sans', sans-serif;
+.shoppingCart .shoppingItemButton {
+  font-weight: bolder;
+  font-size: 20px;
+  margin: 20px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  outline: none;
+  background-color: black;
+  color: white;
+  border: 1px solid white;
 }
 
-.shoppingItemButton{
-    font-weight: bolder;
-    font-size: 20px;
-    margin: 20px;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    outline: none;
-    background-color: rgb(0, 0, 0);
-    color:white;
-    border: 1px solid rgb(255, 255, 255);
+.shoppingCart .shoppingProduct {
+  text-align: center;
+  width: 80%;
+  -webkit-box-shadow: 4px 4px 8px 4px rgba(0, 0, 0, 0.514);
+          box-shadow: 4px 4px 8px 4px rgba(0, 0, 0, 0.514);
+  margin: 20px auto;
+  border-radius: 5px;
 }
+
+.shoppingCart img {
+  width: 100px;
+  height: 100px;
+}
+/*# sourceMappingURL=shoppingCart.css.map */

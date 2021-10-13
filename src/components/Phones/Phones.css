@@ -1,16 +1,25 @@
 .Phones {
-    margin: 0;
-    padding: 0;
-    scroll-margin-top: 200px;
+  margin: 0 100px;
+  padding: 0;
+  scroll-margin-top: 200px;
 }
 
-.container {
-    display: flex;
-    justify-content: flex-start;
-    flex-direction: row;
-    flex-wrap: wrap;
+.Phones h1 {
+  margin: 20px 20px;
 }
 
-#smartPhones-h1 {
-    margin: 30px 100px 0 100px;
+.Phones .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
+/*# sourceMappingURL=Phones.css.map */

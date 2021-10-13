@@ -26,7 +26,7 @@ function Home(props) {
           <button  className="nav-link" onClick={scrollIot}>Iot</button>
       </Header> 
 
-      <img id="oppoImg" src={oppo1} alt='oppo'/>
+      <img src={oppo1} alt='oppo'/>
 
       <div id='phones' ref={phonesRef} >
         <Phones />

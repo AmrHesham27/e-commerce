@@ -1,0 +1,52 @@
+// the way i nest everthing inside one class get me the result of local css
+// everthing here will apply only to specific component and will not be global
+.Header {
+    width:100%;
+    background-color: white;
+    color:white;
+    padding: 5px;
+    position: fixed;
+    border-bottom: 2px solid grey;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+   
+    .nav-link  {
+        /* to make link look like button */
+        background: none;
+        border: none;
+        padding: 0;
+
+        // rest of code
+        margin : 10px 10px;
+        color: black;
+        background-color: white;
+        cursor:pointer;
+        text-decoration: none;
+        font-size: 1.3vw;
+        font-weight: bolder;
+        font-family: "Open Sans", sans-serif;
+
+    }
+    
+    .loginButton {
+        margin : 10px 15px;
+        padding: 0px;
+        text-decoration: none;
+        background-color: white;
+        color: black;
+        font-size: 1.3vw;
+        font-weight: bolder;
+        border: none;
+        font-family: "Open Sans", sans-serif;
+    } 
+
+  
+}
+
+
+
+
+
+

@@ -14,7 +14,7 @@ const OnePhone = (props) => {
     }
 
     return (
-      <div className="Phone">
+      <div className="onePhone">
           <h1 className="phoneName">{phoneName}</h1>
           <img src={phoneImg} alt="phone"/>
           <div className="productPrice" >

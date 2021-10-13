@@ -1,44 +1,16 @@
-* {
-    margin: 0;
-    padding: 0;
-    font-weight: bolder;
-}
-
-html,body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    font-family: 'Open Sans', sans-serif;
-}
-
 .Home {
-    margin: 0;
-    padding: 0;
+  width: 100%;
+  /* so that when you scroll you get the element under the header */
 }
 
-#oppoImg {
-    width: 100%;
-    height: calc(100vw * 0.556) ;
-    margin: 0;
-    margin-top: 94px;
+.Home img {
+  max-width: 100%;
+  width: 100%;
+  height: calc(100vw * 0.556);
+  margin: 45px 0 0 0;
 }
 
-.OPPO {
-    margin: 20px 20px 10px 0;
-    text-align: center;
-    font-weight:bolder;
-
+.Home #phones, .Home #Iot {
+  scroll-margin-top: 120px;
 }
-
-/* so that when you scroll you get the element under the header */
-#phones{
-    scroll-margin-top: 120px;
-}
-
-#Iot{
-    scroll-margin-top: 120px;
-}
-
-#logOut {
-    float: right;
-}
+/*# sourceMappingURL=Home.css.map */

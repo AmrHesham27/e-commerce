@@ -1,57 +1,64 @@
-* {
-    font-weight: bold;
-}
 .LoginPage {
-    display: flex;
-    flex-direction: column;
-}
-/* top margin is big to show the content under header */
-.signIn {
-    width: 380px;
-    max-width: 380px;
-    border:3px solid black;
-    margin: 200px auto 405px auto;
-    text-align: center;
-    box-shadow: 0 3px 3px 0 black;
-}
-.LoginButton {
-    background-color: black;
-    color: white;
-    border: none;
-    padding : 5px 10px;
-    margin:10px;
-    font-size: 20px;
-    width:60%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  /* top margin is big to show the content under header */
 }
 
-#forgotPassword {
-    color: rgba(0, 0, 0, 0.788);
-    background-color: white;
-    text-decoration: none;
-    outline: none;
-    border: none;
-    cursor: pointer;
-    font-size: 18px;
-    margin-bottom: 5px;
+.LoginPage .signIn {
+  width: 380px;
+  max-width: 380px;
+  border: 3px solid black;
+  margin: 200px auto 405px auto;
+  text-align: center;
+  -webkit-box-shadow: 0 3px 3px 0 black;
+          box-shadow: 0 3px 3px 0 black;
 }
 
-.err {
-    color:red;
-    font-weight: bolder;
+.LoginPage .LoginButton {
+  background-color: black;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  margin: 10px;
+  font-size: 20px;
+  width: 60%;
 }
 
-.success {
-    color:green;
-    font-weight: bolder;
-}
-input {
-    padding: 10px 10px;
-    margin-top: 5px;
-    width:70%;
-    border: 1px solid #999;
-    outline:none;
+.LoginPage #forgotPassword {
+  color: rgba(0, 0, 0, 0.788);
+  background-color: white;
+  text-decoration: none;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  margin-bottom: 5px;
 }
 
-.LoginH2 {
-    margin: 5px 0 10px 0;
+.LoginPage .err {
+  color: red;
+  font-weight: bolder;
 }
+
+.LoginPage .success {
+  color: green;
+  font-weight: bolder;
+}
+
+.LoginPage input {
+  padding: 10px 10px;
+  margin-top: 5px;
+  width: 70%;
+  border: 1px solid #999;
+  outline: none;
+}
+
+.LoginPage .LoginH2 {
+  margin: 5px 0 10px 0;
+}
+/*# sourceMappingURL=Login.css.map */

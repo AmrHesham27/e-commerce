@@ -1,10 +1,16 @@
 .Footer {
-    width:100%;
-    box-shadow: 0 2px 4px 0 black;
-    background-color: black;
-    color:white;
-    padding: 0.4rem;
-    text-align: center;
-    font-size: 27px;
-    margin-top: 30px;
+  width: 100%;
+  -webkit-box-shadow: 0 2px 4px 0 black;
+          box-shadow: 0 2px 4px 0 black;
+  background-color: black;
+  color: white;
+  padding: 0.4rem;
+  text-align: center;
+  font-size: 27px;
+  margin-top: 30px;
 }
+
+.Footer p {
+  margin: 10px;
+}
+/*# sourceMappingURL=Footer.css.map */

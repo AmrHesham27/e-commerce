@@ -1,0 +1,17 @@
+.Phones {
+    margin: 0 100px;
+    padding: 0;
+    scroll-margin-top: 200px;
+
+    h1 {
+        margin: 20px 20px;
+    }
+
+    .container {
+        display: flex;
+        justify-content: flex-start;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+}
+

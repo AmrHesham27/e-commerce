@@ -30,7 +30,7 @@ const ShoppingCart = (props) => {
 
 
     return (
-        <div className="shoppingContainer">
+        <div className="shoppingCart">
             <Header/>
             <div className="shoppingWrap">
                 {shoppingItems ? Object.entries(shoppingItems).map( (i) => { return (<ShoppingItem nameAndNo={i} key={i[0]} />) }) : undefined}

@@ -2,20 +2,23 @@
 import React, { useEffect, useState } from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 
+// scss
+import './App.scss'
+
 // pages
-import Home from './Home/Home'
-import Login from "./Login_Register/Login";
-import Register from "./Login_Register/Register";
-import LoginWithEmail from "./Login_Register/LoginWithEmail";
-import ForgotPassword from "./Login_Register/ForgotPassword";
-import ShoppingCart from "./shopping_cart/shoppingCart";
-import ShowProduct from "./ShowProduct/ShowProduct";
+import Home from '../Home/Home'
+import Login from "../Login_Register/Login";
+import Register from "../Login_Register/Register";
+import LoginWithEmail from "../Login_Register/LoginWithEmail";
+import ForgotPassword from "../Login_Register/ForgotPassword";
+import ShoppingCart from "../shopping_cart/shoppingCart";
+import ShowProduct from "../ShowProduct/ShowProduct";
 
 // Redux
 import { connect } from 'react-redux';
-import { addDataAction } from "../actions/products";
+import { addDataAction } from "../../actions/products";
 import { useDispatch } from "react-redux";
-import { addUserAction } from "../actions/authUser";
+import { addUserAction } from "../../actions/authUser";
 
 // Fire base
 import { getDatabase, ref, child, get, set } from "firebase/database";
