@@ -1,6 +1,7 @@
+@import '../../sass/Variables&Mixins';
+
 .showProductPage {
-    display: flex;
-    flex-direction: column;
+    @include displayFlex();
 
     .product{
         width: 380px;

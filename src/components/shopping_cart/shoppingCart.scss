@@ -1,9 +1,10 @@
+@import '../../sass/Variables&Mixins';
+
 .shoppingCart{
-    display: flex;
-    flex-direction: column;
-    
+    @include displayFlex();
+
     .shoppingWrap {
-        margin: 200px auto 405px auto;
+        margin: 50px auto 405px auto;
         display: flex;
         flex-direction: column;
         width: 100%;

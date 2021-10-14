@@ -6,14 +6,17 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  min-height: 100vh;
   /* top margin is big to show the content under header */
 }
 
 .LoginPage .signIn {
-  width: 380px;
-  max-width: 380px;
+  max-width: 360px;
   border: 3px solid black;
-  margin: 200px auto 405px auto;
+  margin: 200px auto 50px auto;
   text-align: center;
   -webkit-box-shadow: 0 3px 3px 0 black;
           box-shadow: 0 3px 3px 0 black;

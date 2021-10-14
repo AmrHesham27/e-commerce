@@ -1,18 +1,6 @@
+@import '../../sass/Variables&Mixins';
+
 .Iot {
-    margin: 0;
-    padding: 0;
-    scroll-margin-top: 200px;
-    background-color: rgb(255, 255, 255);
-
-    h1 {
-        margin: 20px 20px;
-    }
-    
-    .container {
-        display: flex;
-        justify-content: flex-start;
-        flex-direction: row;
-        flex-wrap: wrap;
-    }
+    @include groupOfProducts();
+    border-top: 2px solid grey;
 }
-

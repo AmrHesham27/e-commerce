@@ -1,25 +1,47 @@
 .Phones {
-  margin: 0 100px;
   padding: 0;
   scroll-margin-top: 200px;
+  margin: 0 50px;
 }
 
-.Phones h1 {
+.Phones p {
   margin: 20px 20px;
+  font-size: 36px;
+  font-weight: bolder;
 }
 
 .Phones .container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+}
+
+@media screen and (max-width: 600px) {
+  .Phones {
+    margin: 0 25px;
+  }
+  .Phones p {
+    font-size: 30px;
+    font-weight: bold;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .Phones {
+    margin: 0 12px;
+  }
+  .Phones p {
+    font-size: 24px;
+    font-weight: bold;
+  }
 }
 /*# sourceMappingURL=Phones.css.map */

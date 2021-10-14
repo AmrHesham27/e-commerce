@@ -1,10 +1,7 @@
 body {
+    width: 100%;
     margin: 0;
     padding: 0;
-    width: 100%;
-	display: flex;
-    flex-direction: column;
-
     font-size: 18px;
 	line-height: 1.8em;
     font-weight: bolder;
@@ -12,7 +9,18 @@ body {
 
 }
 
-// this solve the issue of white space in the page 
+// this solve the issue of white space in the right/left page 
 html, body {
     overflow-x:hidden 
 } 
+
+// this lines will make sure the body take the full height of the page
+html, body {
+    height: 100%;
+}
+body {
+    min-height: 100%;
+}
+#root {
+    height: 100%;
+}

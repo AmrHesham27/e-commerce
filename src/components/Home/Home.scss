@@ -1,11 +1,14 @@
+@import '../../sass/Variables&Mixins';
+
 .Home {
     width: 100%;
+    @include displayFlex();
 
     img {
         max-width: 100%;
         width: 100%;
         height: calc(100vw * 0.556) ;
-        margin: 45px 0 0 0;
+        margin: 40px 0 0 0;
     }
     
     /* so that when you scroll you get the element under the header */
@@ -13,7 +16,3 @@
     scroll-margin-top: 120px;
     }
 }
-
-
-
-

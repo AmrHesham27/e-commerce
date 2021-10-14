@@ -1,6 +1,9 @@
 .Footer {
+    bottom : 0;
+    position: relative;
     width:100%;
-    box-shadow: 0 2px 4px 0 black;
+    height: 2.5rem;   
+
     background-color: black;
     color:white;
     padding: 0.4rem;
@@ -9,6 +12,6 @@
     margin-top: 30px;
 
     p {
-        margin: 10px;
+        margin: 5px;
     }
 }

@@ -8,7 +8,7 @@ function Iot() {
 
   return (
     <div className="Iot">
-      <h1>Iot</h1>
+      <p>Iot products</p>
       <div className="container">
       {iot? 
       Object.entries(iot).map(( [productName, infoObject] ) => {return (<OneIot iotName={productName} data={infoObject} key={productName} />)}) 
