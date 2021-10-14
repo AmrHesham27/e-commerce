@@ -1,6 +1,7 @@
 // import css and image
 import './Home.css';
 import oppo1 from '../../utils/oppo1.jpg';
+import oppo2 from '../../utils/oppo2.jpg';
 // import Compnents
 import Header from '../Header/Header';
 import Iot from '../Iot/Iot';
