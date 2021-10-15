@@ -4,10 +4,10 @@
     @include displayFlex();
 
     .product{
-        width: 380px;
-        max-width: 380px;
+        width: 320px;
+        max-width: 360px;
         border:3px solid black;
-        margin: 200px auto 405px auto;
+        margin: 100px auto 0 auto;
         text-align: center;
         box-shadow: 0 3px 3px 0 black;
     }
@@ -26,5 +26,10 @@
     
     .buyButton:hover{
         background-color: green;
+    }
+
+    img {
+        height: 100px;
+        width: 100px;
     }
 }

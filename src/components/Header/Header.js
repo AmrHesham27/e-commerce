@@ -23,11 +23,11 @@ const Header = (props) => {
     // in return() you have to add props.children to add elements indside the component (like buttons) in other compnents files
     // check Home component 
     return (
-        <div className="Header">
+        <div className="myHeader">
 
           <div>
-            <Link className="nav-link"  to="/" >Home</Link>
-            {userId ? <Link className="nav-link"  to="/ShoppingCart" >ShoppingCart</Link> : undefined}
+            <Link className="navLink"  to="/" >Home</Link>
+            {userId ? <Link className="navLink"  to="/ShoppingCart" >ShoppingCart</Link> : undefined}
             {props.children}
           </div>
 

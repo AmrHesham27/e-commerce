@@ -1,28 +1,27 @@
 // the way i nest everthing inside one class get me the result of local css
 // everthing here will apply only to specific component and will not be global
 $font-width: 18px;           
+$paddingByVW : 10px;
 
-.Header {
+.myHeader {
     width:100%;
     background-color: white;
     color:white;
-    padding: 5px;
-
+    padding: 0;
     position: fixed;
-    
-    border-bottom: 2px solid grey;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    box-shadow: 1px 1px 0 0 black;
    
-    .nav-link  {
+    .navLink {
         /* to make link look like button */
         background: none;
         border: none;
-        padding-left: 5px;
+        padding: $paddingByVW;
 
         // rest of code
-        margin : 10px 10px;
+        margin : 0;
         color: black;
         background-color: white;
         cursor:pointer;
@@ -34,8 +33,8 @@ $font-width: 18px;
     }
     
     .loginButton {
-        margin : 10px 15px;
-        padding-right: 5px;
+        margin : 0;
+        padding: 10px;
         text-decoration: none;
         background-color: white;
         color: black;
@@ -45,37 +44,22 @@ $font-width: 18px;
         font-family: "Open Sans", sans-serif;
     } 
 
-    @media screen and (max-width: 1024px) {
-        .loginButton, .nav-link{
-            font-size: 17px;
-        }    
-    }  
     @media screen and (max-width: 900px) {
-        .loginButton, .nav-link{
-            font-size: 17px;
-        }     
-    }
-    @media screen and (max-width: 768px) {
-        .loginButton, .nav-link{
-            font-size: 15px;
-            margin : 6px 6px;
-
+        .loginButton, .navLink{
+            font-size: 13px;
         }     
     }  
-    @media screen and (max-width: 600px) {
-        .loginButton, .nav-link{
-            font-size: 13px;
-            margin : 6px 6px;
+    @media screen and (max-width: 360px) {
+        .loginButton, .navLink{
+            font-size: 11px;
         }     
-    }
-    @media screen and (max-width: 400px) {
-        .loginButton, .nav-link{
-            font-size: 12px;
-            font-weight: 600;
-            margin : 2px;
-
+    }  
+    @media screen and (max-width: 320px) {
+        .loginButton, .navLink{
+            font-size: 11px;
+            padding: 5px;
         }     
-    }
+    }  
 }
 
 

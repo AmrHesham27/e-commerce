@@ -18,7 +18,28 @@
   max-width: 100%;
   width: 100%;
   height: calc(100vw * 0.556);
-  margin: 40px 0 0 0;
+}
+
+.Home .carousel {
+  margin-top: 47px;
+}
+
+@media screen and (max-width: 900px) {
+  .Home .carousel {
+    margin-top: 39px;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .Home .carousel {
+    margin-top: 36px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .Home .carousel {
+    margin-top: 27px;
+  }
 }
 
 .Home #phones, .Home #Iot {
