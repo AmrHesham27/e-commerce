@@ -22,14 +22,14 @@ function Home(props) {
             () => phonesRef.current.scrollIntoView({behavior: "smooth",block: "start"});
   const scrollIot = 
             () => IotRef.current.scrollIntoView({behavior: "smooth",block: "start"});  
-  
+
   return (
     <div className="Home" >
       <Header>
           <button  className="navLink" onClick={scrollPhones}>Smart phones</button>
           <button  className="navLink" onClick={scrollIot}>Iot</button>
       </Header> 
-
+      
       <Carousel>
 
         <Carousel.Item>

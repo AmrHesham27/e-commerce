@@ -1,10 +1,10 @@
 import './Phones.css'
-import { useSelector } from "react-redux";
 import OnePhone from "../OnePhone/OnePhone";
+import products from '../products';
 
 function Phones() {
   // phones names in array to apply map method
-  let phones = useSelector(state => state.products? state.products.smartPhones : undefined);
+  let phones = products.smartPhones;
   return (
     <div className="Phones">
       <p>Smart phones</p>

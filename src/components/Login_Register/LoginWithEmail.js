@@ -9,8 +9,6 @@ import { signInWithEmailAndPassword  } from "firebase/auth";
 // compnents
 import Footer from '../Footer/Footer';
 import Header from '../Header/Header';
-import { useSelector } from 'react-redux';
-import { useEffect } from 'react';
 
 const LoginWithEmail = (props) => {
 
@@ -19,26 +17,19 @@ const LoginWithEmail = (props) => {
    const [email , setEmail] = useState('');
    const [password , setPassword] = useState('');
    const [ErrMsg , setErrMsg] = useState(null);
-   const authUser = useSelector( state => state.authUser );
 
    // Register User with Email and password
    const signIn  = () => { signInWithEmailAndPassword (auth, email, password)
     .then((userCredential) => {
         // Signed in 
+        history.push('/');
     })
       .catch((error) => {
         const errorCode = error.code;
         setErrMsg(errorCode);
       });    
     }
-    // id user sign in go to Home
-    useEffect(
-        ()=>{
-            if (authUser)
-            {history.push('/')}},[authUser, history]
-        
-    );
-
+  
     return (
         <div className='LoginPage'>
             <Header/>

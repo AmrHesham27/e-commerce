@@ -2,6 +2,7 @@
 import './Login.css'
 // react
 import { useState } from 'react';
+import { useHistory } from 'react-router';
 // firebase
 import { getAuth } from '@firebase/auth';
 import { createUserWithEmailAndPassword } from "firebase/auth";
@@ -9,25 +10,44 @@ import { createUserWithEmailAndPassword } from "firebase/auth";
 import Footer from '../Footer/Footer';
 import Header from '../Header/Header';
 
-const Register = (props) => {    
-   const [email , setEmail] = useState('');
-   const [password , setPassword] = useState('');
-   const [ErrMsg , setErrMsg] = useState(null);
-   const auth = getAuth();
+const Register = (props) => {   
+    const history = useHistory(); 
+    const [email , setEmail] = useState('');
+    const [password , setPassword] = useState('');
+    const [confirmPassword , setConfirmedPassword] = useState('');
+    const [Msg , setMsg] = useState(null);
+    const [msgColor, setMsgColor] = useState('black');
+    const auth = getAuth();
 
-   // Register User with Email and password
-   const createUserWithEmail = () => { createUserWithEmailAndPassword(auth, email, password)
-    .then((userCredential) => {
-      // Signed in 
-      const user = userCredential.user;
-      return user;
-    })
-    .catch((error) => {
-      const errorCode = error.code;
-      setErrMsg(errorCode);
-    });
+    // check before Register 
+    // you can add more check to decrease the load on the server of FireBase
+    const check = () => {
+        if(password === confirmPassword){return true}
+        else{return false}
     }
-
+    // Register User with Email and password
+    const createUserWithEmail = () => {
+    if(check()){
+        createUserWithEmailAndPassword(auth, email, password)
+        .then((userCredential) => {
+            // Signed in 
+            const user = userCredential.user;
+            setMsgColor('green');
+            setMsg('Registered sucessfuly!');
+            history.push('/');
+            return user;
+        })
+        .catch((error) => {
+            const errorCode = error.code;
+            setMsgColor('red');
+            setMsg(errorCode);
+        });
+        }
+    else{
+        setMsgColor('red');
+        setMsg('check the password again')}  
+    }
+    
     return (
         <div className='LoginPage'>
             <Header/>
@@ -45,10 +65,16 @@ const Register = (props) => {
                         name='password' 
                         onChange={ e => setPassword(e.target.value) } />
 
+                <input  type="password" 
+                        placeholder='please confirm you password' 
+                        value={confirmPassword} 
+                        name='password' 
+                        onChange={ e => setConfirmedPassword(e.target.value) } />        
+
                 <button className="LoginButton" onClick={ ()=> createUserWithEmail(auth, email, password) }>
                     Register
                 </button>
-                {ErrMsg? <p className="err">{ErrMsg.substring(ErrMsg.indexOf('/') + 1)}</p> : undefined}
+                {Msg? <p style={{color:msgColor}}>{Msg.substring(Msg.indexOf('/') + 1)}</p> : undefined}
             </div>
             <Footer/>
         </div>

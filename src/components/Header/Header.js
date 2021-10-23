@@ -1,25 +1,26 @@
+// React and Css
 import { Link } from 'react-router-dom';
 import "./Header.scss";
+import { useHistory } from 'react-router';
 
 // redux
-import { useDispatch, useSelector } from 'react-redux';
-import { addUserAction } from '../../actions/authUser'
+import { useSelector } from 'react-redux';
 
 // firebase
 import { logOut } from '../../firebase/utils';
 
 const Header = (props) => {
-
-    const dispatch = useDispatch();
+    const history = useHistory();
     // LogOut function
     const LogUserOut = () => {
     logOut();
-    dispatch (addUserAction(null));
+    localStorage.setItem('user',undefined);
+    history.push('/');
     }
 
     // is user logged in ? 
-    const userId = useSelector(state => state.authUser); 
-
+    const userId = useSelector(state => state.authUser);
+     
     // in return() you have to add props.children to add elements indside the component (like buttons) in other compnents files
     // check Home component 
     return (

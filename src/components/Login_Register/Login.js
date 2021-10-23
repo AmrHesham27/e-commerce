@@ -1,35 +1,38 @@
 // css
 import './Login.css'
 // React
-import React, { useEffect } from "react";
+import React from "react";
 import { useHistory } from "react-router";
 // compnents
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
-// redux
-import { useSelector } from "react-redux";
 // firebase
-import { signInWithGoogle } from '../../firebase/utils'
+import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 
 const Login = props => {
 
     const history = useHistory();
-    const authUser = useSelector(state => state.authUser);
+    const auth = getAuth();
+    const provider = new GoogleAuthProvider();
 
-    // if user is logged in , go to home page
-    useEffect(
-        ()=>{
-            if (authUser)
-            {history.push('/')}},[authUser, history]
-        
-    );
-    
+    const sigInWithGoogle = () => {signInWithPopup(auth, provider)
+    .then((result) => {
+        //const user = result.user;
+        history.push('/');
+    }).catch((error) => {
+        // in case needed
+        //const errorCode = error.code;
+        //const errorMessage = error.message;
+        //const email = error.email;
+    });
+    }
+
     return (
         <div className='LoginPage'>
             <Header/>
             <div className="signIn">
                 <h2 className='LoginH2'>Login</h2>
-                <button className="LoginButton" onClick={ signInWithGoogle }>
+                <button className="LoginButton" onClick={ sigInWithGoogle }>
                     Sign In with Google
                 </button>
                 <button className="LoginButton" onClick={ () => history.push('/LoginWithEmail') }>

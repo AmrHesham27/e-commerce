@@ -2,9 +2,16 @@
 
 .shoppingCart{
     @include displayFlex();
+    font-weight: 600;
+    font-size: 20px;
+
+    p{
+        text-align: center;
+        margin-top: 10px;
+    }
 
     .shoppingWrap {
-        margin: 50px auto 405px auto;
+        margin: 50px auto 50px auto;
         display: flex;
         flex-direction: column;
         width: 100%;

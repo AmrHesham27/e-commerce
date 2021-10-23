@@ -1,10 +1,10 @@
 import './Iot.css'
-import { useSelector } from "react-redux";
 import OneIot from "../OneIot/OneIot";
+import products from '../products';
 
 function Iot() {
   // phones names in array to apply map method
-  let iot = useSelector(state => state.products? state.products.iot : undefined);
+  let iot = products.iot;
 
   return (
     <div className="Iot">

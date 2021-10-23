@@ -10,10 +10,17 @@
       -ms-flex-pack: justify;
           justify-content: space-between;
   min-height: 100vh;
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.shoppingCart p {
+  text-align: center;
+  margin-top: 10px;
 }
 
 .shoppingCart .shoppingWrap {
-  margin: 50px auto 405px auto;
+  margin: 50px auto 50px auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

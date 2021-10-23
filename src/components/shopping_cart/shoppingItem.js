@@ -1,12 +1,15 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useSelector } from "react-redux";
-import { getDatabase, ref, runTransaction, get, child  } from "firebase/database";
+import { getDatabase, ref, runTransaction } from "firebase/database";
+import products from "../products";
 
 const ShoppingItem = (props) => {  
     const userId = useSelector( state => state.authUser );
-    const [Img, setImg] = useState(undefined);
     const name = props.nameAndNo[0];
     const [noOfOrders , setNoOfOrders] = useState(props.nameAndNo[1]);
+    // get the Img of the product
+    let allProducts = {...products.iot,...products.smartPhones};
+    let Img = allProducts[name].Img;
 
     function fireBasePlus( userId , name ) {
         const db = getDatabase();
@@ -33,25 +36,6 @@ const ShoppingItem = (props) => {
             return name;
         });
     }
-
-    useEffect(
-        ()=>{
-            let mounted = true;
-            const dbRef = ref(getDatabase());
-            const ImgFireBase = () => { get(child(dbRef, `Images/${name}`)).then((snapshot) => {
-                if (snapshot.exists()) {
-                  setImg(snapshot.val());
-                } else {
-                  console.log("no photo");
-                }
-            }).catch((error) => {
-                console.error(error);
-            });
-            }
-            if(mounted){ ImgFireBase(); ;}
-            return () => {mounted = false}
-        }
-    );
 
     return (
         <div className="shoppingProduct">

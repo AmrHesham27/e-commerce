@@ -1,5 +1,5 @@
 // React
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 
 // scss
@@ -14,9 +14,9 @@ import ForgotPassword from "../Login_Register/ForgotPassword";
 import ShoppingCart from "../shopping_cart/shoppingCart";
 import ShowProduct from "../ShowProduct/ShowProduct";
 
+
 // Redux
 import { connect } from 'react-redux';
-import { addDataAction } from "../../actions/products";
 import { useDispatch } from "react-redux";
 import { addUserAction } from "../../actions/authUser";
 
@@ -24,7 +24,10 @@ import { addUserAction } from "../../actions/authUser";
 import { getDatabase, ref, child, get, set } from "firebase/database";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 
-function App(props){
+// import products
+import products from "../products";
+
+function App(){
   const auth = getAuth();
   const dispatch = useDispatch();
 
@@ -47,38 +50,39 @@ function App(props){
   }).catch((error) => {
     console.error(error);
   });
-  }
-
+  };
 
   // if user signed in, send his id to Redux and put his id in firebase data
   onAuthStateChanged(auth, (user) => {
-      if (user) {
-        // add User to Redux store
-        dispatch(addUserAction(user.uid));
+    if(user){
         // add user to firebase
         userFirebase(user);
-      } 
-  });  
-
-  const [allProducts, setAllProducts] = useState(undefined);
-  // useEffect to get the data of products from FireBase and send it to Redux store
-  useEffect(
-      () => get(child(dbRef, `products`)).then((snapshot) => {
-      if (snapshot.exists()) {
-        const productsData =  snapshot.val();
-        dispatch( addDataAction(productsData) );
-        const allProductsData = Object.entries({...productsData.smartPhones, ...productsData.iot});
-        setAllProducts(allProductsData);
-      } else {
-        //console.log("No data available");
-      }
-      })
-      .catch((error) => {
-      //console.error(error);
-      }),[dispatch, dbRef]  
-  );  
-
+        // add User to Redux store
+        dispatch(addUserAction(user.uid));
+        // localstorage also
+        localStorage.setItem('user',user.uid);
+    } 
+    // if userLogged out send this info to redux and localStorage
+    else{ 
+      dispatch(addUserAction(null));
+      localStorage.setItem('user','noUser')
+    }
+  });
+  // get the data of products to send it display compnents
+  const allProducts = Object.entries({...products.smartPhones, ...products.iot});
+  
   return(
+    localStorage.getItem('user')!=='noUser'? 
+    <BrowserRouter>
+      <Switch>
+        <Route path='/' exact render={ () => (<Home  />) } />
+        <Route path='/ShoppingCart' exact render={ () => (<ShoppingCart />) } />
+        {allProducts.map(([i,y]) =>
+            {return(<Route key={i} path={"/ShowProduct/"+i} exact render={() => (<ShowProduct name={i} data={y} />) }/>)})
+        }
+      </Switch> 
+    </BrowserRouter>
+    :
     <BrowserRouter>
       <Switch>
         <Route path='/' exact render={ () => (<Home  />) } />
@@ -86,11 +90,10 @@ function App(props){
         <Route path='/Register' exact render={ () => (<Register />) } />
         <Route path='/LoginWithEmail' exact render={ () => (<LoginWithEmail />) } />
         <Route path='/ForgotPassword' exact render={ () => (<ForgotPassword />) } />
-        <Route path='/ShoppingCart' exact render={ () => (<ShoppingCart />) } />
-        {allProducts?
-        allProducts.map(([i,y]) => {return(<Route key={i} path={"/ShowProduct/"+i} exact render={() => (<ShowProduct name={i} data={y} />) }/>)})
-        :undefined}
-      </Switch>      
+        {allProducts.map(([i,y]) =>
+            {return(<Route key={i} path={"/ShowProduct/"+i} exact render={() => (<ShowProduct name={i} data={y} />) }/>)})
+        }
+      </Switch>    
     </BrowserRouter>
   )
 }
