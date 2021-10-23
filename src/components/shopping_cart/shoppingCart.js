@@ -39,8 +39,9 @@ const ShoppingCart = (props) => {
             getTotalAmount(data);
            };
         }
-        else{ if(total!==0) {setTotal(0)}
-              else{return}
+        else { 
+            if(total!==0) {setTotal(0)}
+            else{return}
         }             
     });
     

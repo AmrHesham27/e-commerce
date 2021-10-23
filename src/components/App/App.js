@@ -13,6 +13,7 @@ import LoginWithEmail from "../Login_Register/LoginWithEmail";
 import ForgotPassword from "../Login_Register/ForgotPassword";
 import ShoppingCart from "../shopping_cart/shoppingCart";
 import ShowProduct from "../ShowProduct/ShowProduct";
+import Eror404 from "../Error404/Error404";
 
 
 // Redux
@@ -80,6 +81,7 @@ function App(){
         {allProducts.map(([i,y]) =>
             {return(<Route key={i} path={"/ShowProduct/"+i} exact render={() => (<ShowProduct name={i} data={y} />) }/>)})
         }
+      <Route component={Eror404} />
       </Switch> 
     </BrowserRouter>
     :
@@ -93,6 +95,7 @@ function App(){
         {allProducts.map(([i,y]) =>
             {return(<Route key={i} path={"/ShowProduct/"+i} exact render={() => (<ShowProduct name={i} data={y} />) }/>)})
         }
+        <Route component={Eror404} />
       </Switch>    
     </BrowserRouter>
   )

@@ -43,16 +43,6 @@
   margin-bottom: 5px;
 }
 
-.LoginPage .err {
-  color: red;
-  font-weight: bolder;
-}
-
-.LoginPage .success {
-  color: green;
-  font-weight: bolder;
-}
-
 .LoginPage input {
   padding: 10px 10px;
   margin-top: 5px;

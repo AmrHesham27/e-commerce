@@ -32,8 +32,6 @@ const Register = (props) => {
         .then((userCredential) => {
             // Signed in 
             const user = userCredential.user;
-            setMsgColor('green');
-            setMsg('Registered sucessfuly!');
             history.push('/');
             return user;
         })
